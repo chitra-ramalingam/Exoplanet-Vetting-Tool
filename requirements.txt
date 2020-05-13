@@ -6,3 +6,4 @@ sklearn
 xgboost
 shap
 ipywidgets
+future
