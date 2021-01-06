@@ -1,23 +1,23 @@
 import pandas
 
 def plot_selected(i):
-	'''Plotting transaction details i.e. Global/Local view or SHAP values based on dropdown value for selected case'''
-	
-        clear_output()
-        lc = lk.LightCurve(flux=case_interest_lc.iloc[i])
-        if dropdown.value == 'Global View':
-            printmd(f'### Global View for index: {i}')
-            show_global_view(lc, i)          
-        if dropdown.value == 'Folded View':
-            printmd(f'### Folded View for index: {i}')
-            show_local_view(lc, i)
-        if dropdown.value == 'SHAP Values':
-            printmd(f'### SHAP Values for index: {i}')
-            plot_shap_values(case_interest_lc, i)
+    '''Plotting transaction details i.e. Global/Local view or SHAP values based on dropdown value for selected case'''
+    
+    clear_output()
+    lc = lk.LightCurve(flux=case_interest_lc.iloc[i])
+    if dropdown.value == 'Global View':
+        printmd(f'### Global View for index: {i}')
+        show_global_view(lc, i)          
+    if dropdown.value == 'Folded View':
+        printmd(f'### Folded View for index: {i}')
+        show_local_view(lc, i)
+    if dropdown.value == 'SHAP Values':
+        printmd(f'### SHAP Values for index: {i}')
+        plot_shap_values(case_interest_lc, i)
 
 
 def show_global_view(lc, i):
-	'''Plotting Global View for selected trx'''
+    '''Plotting Global View for selected trx'''
 
     lc.plot()
     plt.title(f'Global View: {i}', fontsize=16)
@@ -25,7 +25,7 @@ def show_global_view(lc, i):
 
 
 def show_local_view(lc, i):
-	'''Plotting Local View for selected trx'''
+    '''Plotting Local View for selected trx'''
 
     lc.fold(period=500).plot()
     plt.title(f'Folded View: {i}', fontsize=16)
@@ -33,7 +33,7 @@ def show_local_view(lc, i):
     
 
 def plot_shap_values(case_interest_lc, i):
-	'''Dispalying SHAP value plot for the concerned case'''
+    '''Dispalying SHAP value plot for the concerned case'''
 
     plt.figure(figsize=(15,10))
     dd = predicted_planets_shaps.iloc[i][1:]
@@ -44,7 +44,7 @@ def plot_shap_values(case_interest_lc, i):
 
             
 def next_button_clicked(b):
-	'''change of global index when next button is toggles'''
+    '''change of global index when next button is toggles'''
 
     with out:
         global ix
@@ -52,7 +52,7 @@ def next_button_clicked(b):
 
 
 def prev_button_clicked(b):
-	'''change of global index when prev button is toggles'''
+    '''change of global index when prev button is toggles'''
 
     with out:
         global ix
