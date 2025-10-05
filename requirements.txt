@@ -1,0 +1,17 @@
+openai
+requests
+google-genai
+streamlit
+pandas
+numpy
+scikit-learn
+joblib
+transformers
+accelerate
+safetensors
+sentencepiece
+einops
+lightgbm
+torch
+xgboost
+catboost
